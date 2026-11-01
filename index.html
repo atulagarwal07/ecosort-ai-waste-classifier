@@ -1,0 +1,80 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoSort AI - Smart Waste Classification</title>
+  <link rel="stylesheet" href="codex.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="logo">♻️ EcoSort <span>AI</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#classify">Classify</a>
+      <a href="#guide">Guide</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>AI-Based Waste Classification System</h1>
+    <p>Upload or capture a photo of any waste item and let deep learning tell you which bin it belongs in.</p>
+    <a class="btn" href="#classify">Try it now</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2>How it works</h2>
+    <div class="cards">
+      <div class="card"><div class="icon">📷</div><h3>1. Capture</h3><p>Upload an image or use your webcam.</p></div>
+      <div class="card"><div class="icon">🧠</div><h3>2. Analyze</h3><p>A MobileNet neural network runs directly in your browser.</p></div>
+      <div class="card"><div class="icon">🗑️</div><h3>3. Sort</h3><p>The result is mapped to a waste category and disposal tip.</p></div>
+    </div>
+  </section>
+
+  <section id="classify" class="section alt">
+    <h2>Classify your waste</h2>
+    <p id="status" class="status">Loading AI model…</p>
+
+    <div class="workspace">
+      <div class="panel">
+        <div id="dropzone" class="dropzone">
+          <img id="preview" alt="Preview" hidden>
+          <video id="video" autoplay playsinline hidden></video>
+          <p id="dropText">Drag &amp; drop an image here<br>or click to browse</p>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" hidden>
+        <div class="actions">
+          <button id="camBtn" class="btn small">Use Camera</button>
+          <button id="snapBtn" class="btn small" hidden>Capture</button>
+          <button id="clearBtn" class="btn small ghost">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Result</h3>
+        <div id="result" class="result empty">No image analyzed yet.</div>
+        <h4>Top predictions</h4>
+        <ul id="predictions" class="predictions"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section">
+    <h2>Waste category guide</h2>
+    <div class="cards">
+      <div class="card cat plastic"><h3>🧴 Plastic</h3><p>Rinse and place in the dry recyclables bin.</p></div>
+      <div class="card cat paper"><h3>📦 Paper</h3><p>Keep dry and flatten boxes before recycling.</p></div>
+      <div class="card cat glass"><h3>🍾 Glass</h3><p>Rinse; never mix with ceramics or mirrors.</p></div>
+      <div class="card cat metal"><h3>🥫 Metal</h3><p>Empty and rinse cans before recycling.</p></div>
+      <div class="card cat organic"><h3>🍌 Organic</h3><p>Compost food scraps and garden waste.</p></div>
+      <div class="card cat ewaste"><h3>🔋 E-waste</h3><p>Take to a certified electronics collection point.</p></div>
+    </div>
+  </section>
+
+  <footer>© 2026 EcoSort AI · Built with HTML, CSS, JavaScript &amp; TensorFlow.js</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1"></script>
+  <script src="code.js"></script>
+</body>
+</html>

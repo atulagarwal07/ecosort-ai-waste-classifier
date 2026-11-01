@@ -1,0 +1,68 @@
+:root {
+  --green: #1f9d55;
+  --dark: #0f3d2e;
+  --bg: #f4faf6;
+  --text: #1d2b25;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Segoe UI", system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 6%; background: var(--dark); position: sticky; top: 0; z-index: 10; }
+.logo { color: #fff; font-size: 1.4rem; font-weight: 700; }
+.logo span { color: #6ee7a0; }
+.nav a { color: #d7f5e3; text-decoration: none; margin-left: 24px; }
+.nav a:hover { color: #fff; }
+
+.hero { text-align: center; padding: 100px 6%; color: #fff; background: linear-gradient(135deg, #0f3d2e, #1f9d55); }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+.hero p { max-width: 640px; margin: 0 auto 28px; font-size: 1.1rem; opacity: .92; }
+
+.btn { display: inline-block; background: #6ee7a0; color: var(--dark); border: none; padding: 12px 28px; border-radius: 30px; font-weight: 600; cursor: pointer; text-decoration: none; font-size: 1rem; transition: transform .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,.18); }
+.btn.small { padding: 9px 20px; font-size: .9rem; background: var(--green); color: #fff; }
+.btn.ghost { background: transparent; color: var(--green); border: 2px solid var(--green); }
+
+.section { padding: 70px 6%; text-align: center; }
+.section.alt { background: #e6f4ec; }
+.section h2 { font-size: 2rem; margin-bottom: 30px; color: var(--dark); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; max-width: 1000px; margin: 0 auto; }
+.card { background: #fff; padding: 26px; border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,.07); }
+.card .icon { font-size: 2.4rem; margin-bottom: 8px; }
+.cat { border-top: 6px solid; }
+.cat.plastic { border-color: #3b82f6; }
+.cat.paper   { border-color: #f59e0b; }
+.cat.glass   { border-color: #14b8a6; }
+.cat.metal   { border-color: #6b7280; }
+.cat.organic { border-color: #22c55e; }
+.cat.ewaste  { border-color: #ef4444; }
+
+.status { margin-bottom: 20px; font-weight: 600; color: var(--green); }
+.workspace { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; text-align: left; }
+.panel { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.07); }
+.dropzone { border: 3px dashed #9bd8b4; border-radius: 14px; min-height: 260px; display: flex; align-items: center; justify-content: center; text-align: center; cursor: pointer; overflow: hidden; color: #4b6b5b; transition: background .2s; }
+.dropzone.drag { background: #e6f4ec; }
+.dropzone img, .dropzone video { max-width: 100%; max-height: 300px; }
+.actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+.result { margin: 12px 0 20px; padding: 18px; border-radius: 12px; font-size: 1.1rem; }
+.result.empty { background: #f1f5f3; color: #7a8b83; }
+.result strong { font-size: 1.5rem; display: block; }
+.result small { display: block; margin-top: 6px; opacity: .85; }
+.result.plastic { background: #dbeafe; color: #1e3a8a; }
+.result.paper   { background: #fef3c7; color: #78350f; }
+.result.glass   { background: #ccfbf1; color: #115e59; }
+.result.metal   { background: #e5e7eb; color: #374151; }
+.result.organic { background: #dcfce7; color: #14532d; }
+.result.ewaste  { background: #fee2e2; color: #7f1d1d; }
+.result.general { background: #f3e8ff; color: #581c87; }
+
+.predictions { list-style: none; margin-top: 8px; }
+.predictions li { margin-bottom: 10px; font-size: .92rem; }
+.bar { height: 8px; background: #e2ece6; border-radius: 6px; overflow: hidden; margin-top: 4px; }
+.bar div { height: 100%; background: var(--green); width: 0; transition: width .6s; }
+
+footer { text-align: center; padding: 26px; background: var(--dark); color: #bfe9d0; font-size: .9rem; }
+
+@media (max-width: 600px) { .nav nav a { margin-left: 12px; } .hero { padding: 70px 6%; } }
